@@ -7,6 +7,10 @@ namespace MediatR_CQRS.Repositories
 {
     public class OrderRepository : IOrderRepository
     {
+        /*
+            to add cachsing layer, add private readonly ConcreateDictionary 
+            then add some logic in GetAllOrders
+        */
         private readonly ApplicationContext _context;
 
         public OrderRepository(ApplicationContext context)

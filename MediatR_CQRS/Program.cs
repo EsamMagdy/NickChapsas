@@ -3,6 +3,7 @@ using MediatR;
 using MediatR_CQRS.Context;
 using MediatR_CQRS.PipelineBehaviors;
 using MediatR_CQRS.Repositories;
+using MediatR_CQRS.Repositories.Cached;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -22,6 +23,7 @@ builder.Services.AddDbContext<ApplicationContext>(opts =>
         opts.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection")));
 
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.Decorate<IOrderRepository, CachedOrdersRepositoryTest>();
 
 builder.Services.AddTransient(typeof(IPipelineBehavior<,>),typeof(ValidationBehavior<,>));
 

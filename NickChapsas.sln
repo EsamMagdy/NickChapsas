@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatR_CQRS", "MediatR_CQR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkingExample", "BenchmarkingExample\BenchmarkingExample.csproj", "{5517B72F-A583-451A-9D3E-E5294EB2836C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureFlagExample", "FeatureFlagExample\FeatureFlagExample.csproj", "{F718D361-3B74-4F55-AB1D-16B51B7E7646}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{5517B72F-A583-451A-9D3E-E5294EB2836C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5517B72F-A583-451A-9D3E-E5294EB2836C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5517B72F-A583-451A-9D3E-E5294EB2836C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F718D361-3B74-4F55-AB1D-16B51B7E7646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F718D361-3B74-4F55-AB1D-16B51B7E7646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F718D361-3B74-4F55-AB1D-16B51B7E7646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F718D361-3B74-4F55-AB1D-16B51B7E7646}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

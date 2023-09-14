@@ -23,6 +23,20 @@ namespace FeatureFlagExample.Controllers
             _featureManager = featureManager;
         }
 
+        [HttpGet("GetCustomerNameWithTimeWindowFilter")]
+        public async Task<string> GetCustomerNameWithTimeWindowFilter()
+        {
+            var currentDateTime = DateTime.UtcNow.ToString("O");
+            if (await _featureManager.IsEnabledAsync("Percentage"))
+            {
+                return $"Esam {currentDateTime}";
+            }
+            else
+            {
+                return $"No Name {currentDateTime}";
+            }
+
+        }
         [HttpGet("GetCustomerName")]
         public async Task<string> GetCustomerName()
         {
@@ -64,6 +78,25 @@ namespace FeatureFlagExample.Controllers
             }
 
         }
+
+
+        [HttpGet("TestPercentageFilter")]
+        [FeatureGate("NewPercentageFilter")]
+        public async Task<string> TestPercentageFilter()
+        {
+            var newAlgorithm = await _featureManager.IsEnabledAsync("NewPercentageFilter");
+            return newAlgorithm ? "A" : "B";
+        }
+
+
+        [HttpGet("ExcuteOnEdgeOnly")]
+        [FeatureGate("BrowserFlag")]
+        public async Task<ActionResult> ExcuteOnEdgeOnly()
+        {
+            return Ok("this code will be executed in microsoft edge");
+        }
+
+
 
     }
 }
